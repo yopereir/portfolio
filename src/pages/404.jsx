@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { Container, Themed, Link as TLink } from "theme-ui"
-import Header from "@lekoarts/gatsby-theme-emilia/src/components/header"
-import Layout from "@lekoarts/gatsby-theme-emilia/src/components/layout"
-import Seo from "@lekoarts/gatsby-theme-emilia/src/components/seo"
+import Header from "../components/header"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const NotFound = () => (
   <Layout>
