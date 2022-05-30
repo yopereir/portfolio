@@ -20,7 +20,10 @@ module.exports = {
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       // See the theme's README for all available options
-      options: {},
+      options: {
+        name: "Yohann",
+        location: "Heaven"
+      },
     },
     `gatsby-plugin-sitemap`,
     {
