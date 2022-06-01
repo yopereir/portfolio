@@ -15,6 +15,7 @@ type ProjectProps = {
       date: string
       slug: string
       title: string
+      categories?: string[]
       areas: string[]
       cover: {
         childImageSharp: {
