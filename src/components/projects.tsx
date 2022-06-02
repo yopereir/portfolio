@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* eslint no-shadow: 0 */
-import { jsx, Container, Themed, Box } from "theme-ui"
+import { jsx, Container, Heading, Themed, Box } from "theme-ui"
 import { useSpring, animated, config } from "react-spring"
 import { rgba } from "polished"
 import { IGatsbyImageData } from "gatsby-plugin-image"
@@ -12,15 +12,25 @@ type Props = {
   projects: {
     slug: string
     title: string
+    categories?: string[]
     cover: {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData
       }
     }
-  }[]
+  }[],
+  categoriesToShow?: string[]
 }
 
-const Projects = ({ projects }: Props) => {
+function getProjectsInCategory(category, projects){
+  let projectsInCategory = []
+  projects.forEach(project => {
+    if(project.categories !== null && project.categories.includes(category)) projectsInCategory.push(project);
+  });
+  return projectsInCategory;
+}
+
+const Projects = ({ projects, categoriesToShow = ['Blockchain'] }: Props) => {
   const fadeUpProps = useSpring({
     config: config.slow,
     delay: 600,
@@ -68,6 +78,8 @@ const Projects = ({ projects }: Props) => {
       <Header />
       <Box as="main" variant="layout.main">
         <animated.div style={fadeUpProps}>
+          {(categoriesToShow.length === 0)
+          ?
           <Container
             sx={{
               mt: `-8rem`,
@@ -87,6 +99,31 @@ const Projects = ({ projects }: Props) => {
               return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
             })}
           </Container>
+          :
+          categoriesToShow.map((category)=>{
+            return <Container
+              sx={{
+                mt: `-8rem`,
+                display: `grid`,
+                gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(350px, 1fr))`],
+                gridGap: 4,
+                alignItems: `flex-start`,
+              }}>
+              <Heading as="h2" variant="styles.h2">
+                {category}
+              </Heading>
+              {getProjectsInCategory(category, projects).map((project, index) => {
+                const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
+                const shadow = rgba(val, 0.15)
+
+                const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
+                const shadowArray = px.map((v) => `${shadow} 0px ${v} ${v} 0px`)
+
+                return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
+              })}
+            </Container>
+          })
+          }
         </animated.div>
       </Box>
     </Layout>
