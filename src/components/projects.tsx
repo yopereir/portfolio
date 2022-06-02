@@ -80,7 +80,7 @@ const Projects = ({ projects }: Props) => {
       <Header />
       <Box as="main" variant="layout.main">
         <animated.div style={fadeUpProps}>
-          {(categoriesToShow.length === 0)
+          {(categoriesToShow.length === 0 || categoriesToShow.includes("All"))
           ?
           <Container
             sx={{
@@ -104,9 +104,10 @@ const Projects = ({ projects }: Props) => {
           :
           categoriesToShow.map((category)=>{
             return <div>
+              {(categoriesToShow.length !== 1)?
             <Heading style={{marginLeft: "2rem", minHeight: "10rem"}} as="h2" variant="styles.h2">
               {category}
-            </Heading>
+            </Heading>:""}
             <Container
               sx={{
                 mt: `-8rem`,

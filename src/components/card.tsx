@@ -59,7 +59,7 @@ const Card = ({ item, overlay = `#000`, shadow = shadowArray, eager }: CardProps
       }}
       data-name="card-overlay"
     >
-      <Heading variant="styles.h2" sx={{ my: 0, textShadow: `rgba(0, 0, 0, 0.2) 0px 2px 12px`, color: `white` }}>
+      <Heading variant="styles.h2" sx={{textAlign: "center", my: 0, textShadow: `rgba(0, 0, 0, 0.2) 0px 2px 12px`, color: `white` }}>
         {item.title}
       </Heading>
     </div>
