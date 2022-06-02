@@ -7,6 +7,7 @@ import { IGatsbyImageData } from "gatsby-plugin-image"
 import Layout from "./layout"
 import Header from "./header"
 import Card from "./card"
+import useSiteMetadata from "../hooks/use-site-metadata"
 
 type Props = {
   projects: {
@@ -30,7 +31,8 @@ function getProjectsInCategory(category, projects){
   return projectsInCategory;
 }
 
-const Projects = ({ projects, categoriesToShow = ['Blockchain'] }: Props) => {
+const Projects = ({ projects }: Props) => {
+  const { categoriesToShow } = useSiteMetadata()
   const fadeUpProps = useSpring({
     config: config.slow,
     delay: 600,
@@ -101,7 +103,11 @@ const Projects = ({ projects, categoriesToShow = ['Blockchain'] }: Props) => {
           </Container>
           :
           categoriesToShow.map((category)=>{
-            return <Container
+            return <div>
+            <Heading style={{marginLeft: "2rem", minHeight: "10rem"}} as="h2" variant="styles.h2">
+              {category}
+            </Heading>
+            <Container
               sx={{
                 mt: `-8rem`,
                 display: `grid`,
@@ -109,9 +115,6 @@ const Projects = ({ projects, categoriesToShow = ['Blockchain'] }: Props) => {
                 gridGap: 4,
                 alignItems: `flex-start`,
               }}>
-              <Heading as="h2" variant="styles.h2">
-                {category}
-              </Heading>
               {getProjectsInCategory(category, projects).map((project, index) => {
                 const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
                 const shadow = rgba(val, 0.15)
@@ -122,6 +125,7 @@ const Projects = ({ projects, categoriesToShow = ['Blockchain'] }: Props) => {
                 return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
               })}
             </Container>
+            </div>
           })
           }
         </animated.div>
