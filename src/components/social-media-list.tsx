@@ -9,7 +9,7 @@ const SocialMediaList = () => {
   return (
     <React.Fragment>
       {socialMedia.map((entry) => (
-        <Themed.a key={entry.title} href={entry.href}>
+        <Themed.a key={entry.title} href={entry.href} target="_blank" rel="noopener noreferrer">
           {entry.title}
         </Themed.a>
       ))}

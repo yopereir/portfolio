@@ -105,7 +105,7 @@ const Projects = ({ projects }: Props) => {
           categoriesToShow.map((category)=>{
             return <div>
               {(categoriesToShow.length !== 1)?
-            <Heading style={{marginLeft: "2rem", minHeight: "10rem"}} as="h2" variant="styles.h2">
+            <Heading id={category} style={{marginLeft: "2rem", minHeight: "10rem"}} as="h2" variant="styles.h2">
               {category}
             </Heading>:""}
             <Container

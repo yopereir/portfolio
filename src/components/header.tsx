@@ -7,6 +7,7 @@ import useEmiliaConfig from "../hooks/use-emilia-config"
 import HeaderBackground from "./header-background"
 import Location from "../assets/location"
 import SocialMediaList from "./social-media-list"
+import LinksList from "./links-list"
 import ColorModeToggle from "./colormode-toggle"
 
 type AvatarStaticQuery = {
@@ -116,6 +117,7 @@ const Header = () => {
         <div data-testid="social-header" sx={{ mt: 4, mb: 6, a: { mx: 2 } }}>
           <animated.div style={fadeLongProps}>
             <SocialMediaList />
+            <LinksList />
           </animated.div>
         </div>
       </div>
