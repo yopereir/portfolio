@@ -11,6 +11,7 @@ type UseSiteMetadataProps = {
       siteLanguage: string
       siteImage: string
       author: string
+      categoriesToShow?: string[]
       [key: string]: unknown
     }
   }
@@ -29,6 +30,7 @@ const useSiteMetadata = () => {
           siteLanguage
           siteImage
           author
+          categoriesToShow
         }
       }
     }
