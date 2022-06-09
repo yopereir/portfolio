@@ -102,7 +102,7 @@ const ContactPage = ({ title, areas, description = ``, date }: ContactPageProps)
           </animated.div>
           <animated.div style={infoProps}>
             <Themed.p sx={{ mb: 0, mt: 4 }}>{date}</Themed.p>
-<form action="/">
+<form class="gform" method="POST" data-email="yohann.pereira28@gmail.com" action="https://script.google.com/macros/s/AKfycbyHyCc0zzdfJQ0MSlmTqIs3Pz22VWqOnx0sYgK5H1wpIssO9bxIvrlzUNq9YDCIYBwT/exec">
   <div class="container" style={{styles}}>
     <div class="row">
         <h4 style={{"text-align":"center"}}>We'd love to hear from you!</h4>
@@ -110,29 +110,29 @@ const ContactPage = ({ title, areas, description = ``, date }: ContactPageProps)
     <div class="row input-container">
         <div class="col-xs-12">
           <div class="styled-input wide">
-            <input type="text" required />
+            <input id="name" name="name" type="text" required />
             <label>Name</label> 
           </div>
           <div class="styled-input wide">
-            <input type="text" />
+            <input id="companyname" name="companyname" type="text" />
             <label>Company (optional)</label> 
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="styled-input">
-            <input type="email" required />
+            <input id="email" name="email" type="email" required />
             <label>Email</label> 
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="styled-input" style={{float:"right"}}>
-            <input type="text" />
+            <input id="phonenumber" name="phonenumber" type="text" />
             <label>Phone Number (optional)</label> 
           </div>
         </div>
         <div class="col-xs-12">
           <div class="styled-input wide">
-            <textarea required></textarea>
+            <textarea id="message" name="message" required></textarea>
             <label>Message</label>
           </div>
         </div>
