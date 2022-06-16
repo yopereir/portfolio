@@ -23,8 +23,7 @@ jobs:
         cache: 'npm'
     - run: npm i -f
     - name: setup git config
-      run: |
-        git config --global user.name "yopereir"
-        git config --global user.password ${{ secrets.GITHUB_TOKEN }}
-        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/yopereir/portfolio.git
+      run: git remote set-url origin https://yopereir:$GITHUB_TOKEN@github.com/yopereir/portfolio.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: npm run deploy
