@@ -20,9 +20,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: setup git config
-      run: |
-        git config --global user.name "yopereir"
-        git config --global user.email "yohann.pereira28@gmail.com"
     - run: npm i -f
-    - run: npm run deploy
+    - run: npm run build
+    - name: GH Pages deploy
+      # You may pin to the exact commit or the version.
+      # uses: Cecilapp/GitHub-Pages-deploy@64837616f5938346d4be701112e6941195bfd54a
+      uses: Cecilapp/GitHub-Pages-deploy@3.2.1
+      with:
+        # A verified email.
+        email: "yohann.pereira28@gmail.com"
+        # Where static files are.
+        build_dir: "public"
+        branch: "publish"
