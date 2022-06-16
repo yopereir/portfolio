@@ -24,6 +24,9 @@ jobs:
     - run: npm i -f
     - name: setup git config
       run: |
+        export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        git config --global hub.protocol https
+        git remote set-url origin https://$GITHUB_TOKEN:x-oauth-basic@github.com/yopereir/portfolio.git
         git config --global user.name "yopereir"
         git config --global user.email "yohann.pereira28@gmail.com"
     - run: npm run deploy
