@@ -15,7 +15,7 @@ module.exports = {
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `@lekoarts_de`,
-    categoriesToShow: [`Game Development`,`Blockchain`],
+    categoriesToShow: [`Game Development`,`Blockchain`, `Web Development`], // set to ['All'] to show all categories
   },
   plugins: [
     {
