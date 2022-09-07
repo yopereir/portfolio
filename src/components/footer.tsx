@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, jsx, Container, Flex, Link, useColorMode } from "theme-ui"
+import { Box, jsx, Container, Flex, Link, useColorMode, Themed } from "theme-ui"
 import useEmiliaConfig from "../hooks/use-emilia-config"
 import SocialMediaList from "./social-media-list"
 import ColorModeToggle from "./colormode-toggle"
@@ -25,17 +25,6 @@ const Footer = () => {
     >
       <Container>
         <div sx={{ display: `grid`, gridGap: 4, gridTemplateColumns: [`1fr`, `1fr`] }}>
-          <div
-            sx={{
-              p: { mb: 0 },
-              h2: {
-                mt: 0,
-                mb: 1,
-              },
-            }}
-          >
-            <AboutMeMDX />
-          </div>
           <Flex
             sx={{
               textAlign: [`center`],
@@ -43,10 +32,17 @@ const Footer = () => {
               justifyContent: `space-between`,
             }}
           >
-            <div sx={{ mt: [1, 1] }}>
-              <div sx={{ a: { ml: [1, 1], mr: [1, 1] } }}>
+            <div sx={{ t: [1, 1] }}>
+              <div sx={{ display: "flex", textAliign: "center", justifyContent: `space-around`, a: { ml: [1, 1], mr: [1, 1] } }}>
                 <SocialMediaList />
+                <Themed.a key="about-me" href="aboutme">
+                  About Me
+                </Themed.a>
+                <Themed.a key="contact" href="contact">
+                  Contact
+                </Themed.a>
               </div>
+              <br/><br/>
               <div sx={{ color: `textMuted` }}>Copyright &copy; {new Date().getFullYear()}. All rights reserved.</div>
             </div>
           </Flex>

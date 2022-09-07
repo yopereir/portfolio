@@ -7,12 +7,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import HeaderBackground from "../components/header-background"
 import LeftArrow from "../assets/left-arrow"
-import AboutMeMDX from "../texts/about-me"
+import ThankYouMDX from "../texts/thankyou"
 import useEmiliaConfig from "../hooks/use-emilia-config"
 import ColorModeToggle from "../components/colormode-toggle"
 import Layout from "../components/layout"
 
-type AboutMePageProps = {
+type ThankYouPageProps = {
   title: string
   areas: string[]
   description?: string
@@ -27,7 +27,7 @@ type AvatarStaticQuery = {
   }
 }
 
-const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps) => {
+const ThankYouPage = ({ title, areas, description = ``, date }: ThankYouPageProps) => {
   const { name } = useEmiliaConfig()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
@@ -97,7 +97,7 @@ const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps)
         <div sx={{ mt: "20vh", mb: [6, 6, 7], ml: "10vw", mr: "10vw" }}>
           <animated.div style={infoProps}>
             <Themed.p sx={{ mb: 0, mt: 4 }}>{date}</Themed.p>
-              <AboutMeMDX />
+              <ThankYouMDX />
           </animated.div>
         </div>
       </Container>
@@ -105,4 +105,4 @@ const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps)
   )
 }
 
-export default AboutMePage
+export default ThankYouPage
