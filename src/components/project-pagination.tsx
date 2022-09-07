@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { rgba } from "polished"
 import { IGatsbyImageData } from "gatsby-plugin-image"
 import Card from "./card"
 
@@ -62,8 +63,24 @@ const ProjectPagination = ({ prev, next }: ProjectPaginationProps) => (
         },
       }}
     >
-      {prev && <Card item={prev} />}
-      {next && <Card item={next} />}
+    {prev && [prev].map((project, index) => {
+            const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
+            const shadow = rgba(val, 0.15)
+
+            const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
+            const shadowArray = px.map((v) => `${shadow} 0px ${v} ${v} 0px`)
+
+            return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
+    })}
+    {next && [next].map((project, index) => {
+            const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
+            const shadow = rgba(val, 0.15)
+
+            const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
+            const shadowArray = px.map((v) => `${shadow} 0px ${v} ${v} 0px`)
+
+            return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
+    })}
     </div>
   </div>
 )

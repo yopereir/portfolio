@@ -63,6 +63,8 @@ const Card = ({ item, overlay = `#000`, shadow = shadowArray, eager }: CardProps
         {item.title}
       </Heading>
     </div>
+    {//use jpg images only
+    }
     <GatsbyImage style={{maxHeight: "20rem"}} loading={eager ? `eager` : `lazy`} image={item.cover.childImageSharp.gatsbyImageData} alt="" />
   </Link>
 )

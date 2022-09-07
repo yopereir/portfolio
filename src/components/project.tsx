@@ -76,7 +76,7 @@ const Project = ({ data: { project, images }, pageContext: { prev, next } }: Pro
       />
       <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
       <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`] }}>
-        {images.nodes.map((image) => (
+        {false && images.nodes.map((image) => ( // set to true to display all images inside this project folder.
           <animated.div key={image.name} style={imageFade}>
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
