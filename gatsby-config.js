@@ -11,10 +11,10 @@ module.exports = {
     siteTitleAlt: `Yohann - Portfolio`,
     siteHeadline: `Yohann`,
     siteUrl: `https://emilia.lekoarts.de`,
-    siteDescription: `Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
+    siteDescription: `Minimalistic portfolio site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
-    author: `@lekoarts_de`,
+    author: `Yohann Pereira`,
     categoriesToShow: [`Game Development`,`Blockchain`, `Web Development`], // set to ['All'] to show all categories
   },
   plugins: [
@@ -23,7 +23,17 @@ module.exports = {
       // See the theme's README for all available options
       options: {
         name: "Yohann",
-        location: "Heaven"
+        location: "", // leave as empty string to not display location
+        socialMedia: [
+          {
+            title: `LinkedIn`,
+            href: `https://www.linkedin.com/in/yohannpereira28/`
+          },
+          {
+            title: `GitHub`,
+            href: `https://github.com/yopereir`
+          },
+        ]
       },
     },
     `gatsby-plugin-sitemap`,

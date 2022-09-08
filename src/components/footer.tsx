@@ -43,7 +43,7 @@ const Footer = () => {
                 </Themed.a>
               </div>
               <br/><br/>
-              <div sx={{ color: `textMuted` }}>Copyright &copy; {new Date().getFullYear()}. All rights reserved.</div>
+              <div sx={{ color: `textMuted` }}>&copy; {new Date().getFullYear()} Yohann Pereira.</div>
             </div>
           </Flex>
         </div>

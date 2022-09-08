@@ -111,7 +111,7 @@ const Header = () => {
               color: `text`,
             }}
           >
-            <Location /> {location}
+            {location == ""?"":<Location />} {location}
           </Flex>
         </animated.div>
         <div data-testid="social-header" sx={{ mt: 4, mb: 6, a: { mx: 2 } }}>
