@@ -4,7 +4,7 @@ import ProjectComponent from "../components/project"
 export default ProjectComponent
 
 export const query = graphql`
-  query ($slug: String!, $absolutePathRegex: String!, $formatString: String!) {
+  query ($slug: String!, $absolutePathRegex: String!) {
     images: allFile(
       filter: {
         absolutePath: { regex: $absolutePathRegex }
@@ -22,7 +22,7 @@ export const query = graphql`
     project(slug: { eq: $slug }) {
       body
       excerpt
-      date(formatString: $formatString)
+      date
       slug
       title
       areas

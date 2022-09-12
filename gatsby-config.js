@@ -15,7 +15,7 @@ module.exports = {
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `Yohann Pereira`,
-    categoriesToShow: [`Game Development`,`Blockchain`, `Web Development`], // set to ['All'] to show all categories
+    categoriesToShow: [`All`], // set to ['All'] to show all categories
   },
   plugins: [
     {

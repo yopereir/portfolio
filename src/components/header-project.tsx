@@ -106,7 +106,7 @@ const HeaderProject = ({ title, areas, description = ``, date }: HeaderProjectPr
               {areas.map((area, index) => (
                 <React.Fragment key={area}>
                   {index > 0 && `, `}
-                  {area}
+                  {false && area}
                 </React.Fragment>
               ))}
             </div>
