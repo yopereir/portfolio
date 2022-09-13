@@ -33,7 +33,7 @@ type ProjectPaginationProps = {
 
 const ProjectPagination = ({ prev, next }: ProjectPaginationProps) => (
   <div sx={{ mt: 6, mb: 4 }}>
-    <div sx={{ display: `grid`, gridTemplateColumns: `250px 1fr`, alignItems: `center`, mb: 4 }}>
+    {prev || next?<div sx={{ display: `grid`, gridTemplateColumns: `250px 1fr`, alignItems: `center`, mb: 4 }}>
       <h2
         sx={{
           color: `textMuted`,
@@ -47,7 +47,7 @@ const ProjectPagination = ({ prev, next }: ProjectPaginationProps) => (
         More Projects
       </h2>
       <div sx={{ width: `100%`, height: `2px`, backgroundColor: `muted` }} />
-    </div>
+    </div>:""}
     <div
       sx={{
         display: `grid`,
