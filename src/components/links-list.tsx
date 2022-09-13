@@ -32,7 +32,7 @@ const LinksList = () => {
           </Themed.a>
         )):""
       }
-      <Themed.a key="about-me" href="about-me">
+      <Themed.a key="about-me" href="aboutme">
         About Me
       </Themed.a>
       <Themed.a key="contact" href="contact">

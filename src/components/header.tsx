@@ -4,6 +4,7 @@ import { animated, useSpring, config } from "react-spring"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import useEmiliaConfig from "../hooks/use-emilia-config"
+import useSiteMetadata from "../hooks/use-site-metadata"
 import HeaderBackground from "./header-background"
 import Location from "../assets/location"
 import SocialMediaList from "./social-media-list"
@@ -20,6 +21,7 @@ type AvatarStaticQuery = {
 
 const Header = () => {
   const { name, location, assetsPath } = useEmiliaConfig()
+  const { oneLineDescription } = useSiteMetadata()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: React.SyntheticEvent) => {
@@ -115,9 +117,10 @@ const Header = () => {
           </Flex>
         </animated.div>
         <div data-testid="social-header" sx={{ mt: 4, mb: 6, a: { mx: 2 } }}>
+          <div style={{textAlign:"center", maxWidth:"80vw"}}>{oneLineDescription}</div>
           <animated.div style={fadeLongProps}>
-            <SocialMediaList />
             <LinksList />
+            <SocialMediaList />
           </animated.div>
         </div>
       </div>

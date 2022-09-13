@@ -34,13 +34,13 @@ const Footer = () => {
           >
             <div sx={{ t: [1, 1] }}>
               <div sx={{ display: "flex", textAliign: "center", justifyContent: `space-around`, a: { ml: [1, 1], mr: [1, 1] } }}>
-                <SocialMediaList />
                 <Themed.a key="about-me" href="aboutme">
                   About Me
                 </Themed.a>
                 <Themed.a key="contact" href="contact">
                   Contact
                 </Themed.a>
+                <SocialMediaList />
               </div>
               <br/><br/>
               <div sx={{ color: `textMuted` }}>&copy; {new Date().getFullYear()} Yohann Pereira.</div>
