@@ -16,7 +16,7 @@ module.exports = {
     siteImage: `/banner.jpg`,
     author: `Yohann Pereira`,
     oneLineDescription: `This is a one line description`,
-    categoriesToShow: [`All`], // set to ['All'] to show all categories
+    categoriesToShow: [`DevOps`], // set to ['All'] to show all categories
   },
   plugins: [
     {

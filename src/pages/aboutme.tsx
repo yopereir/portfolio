@@ -3,13 +3,11 @@ import * as React from "react"
 import { Flex, jsx, Container, Heading, Themed, useColorMode } from "theme-ui"
 import { animated, useSpring, config } from "react-spring"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
-import HeaderBackground from "../components/header-background"
 import LeftArrow from "../assets/left-arrow"
 import AboutMeMDX from "../texts/about-me"
 import useEmiliaConfig from "../hooks/use-emilia-config"
-import ColorModeToggle from "../components/colormode-toggle"
+import useSiteMetadata from "../hooks/use-site-metadata"
 import Layout from "../components/layout"
 
 type AboutMePageProps = {
@@ -30,6 +28,7 @@ type AvatarStaticQuery = {
 const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps) => {
   const { name } = useEmiliaConfig()
   const [colorMode, setColorMode] = useColorMode()
+  const { categoriesToShow } = useSiteMetadata()
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -45,11 +44,6 @@ const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps)
     }
   `)
 
-  const titleProps = useSpring({
-    config: config.slow,
-    from: { opacity: 0, transform: `translate3d(0, -30px, 0)` },
-    to: { opacity: 1, transform: `translate3d(0, 0, 0)` },
-  })
   const backButtonProps = useSpring({
     config: config.slow,
     from: { opacity: 0, transform: `translate3d(-30px, 0, 0)` },
@@ -94,11 +88,14 @@ const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps)
           <span sx={{ fontWeight: `medium` }}>{name}</span>
         </Link>
       </animated.div>
-        <div sx={{ mt: "20vh", mb: [6, 6, 7], ml: "10vw", mr: "10vw" }}>
+        <div sx={{ mt: "10vh", mb: [6, 6, 7], ml: "10vw", mr: "10vw" }}>
           <animated.div style={infoProps}>
             <Themed.p sx={{ mb: 0, mt: 4 }}>{date}</Themed.p>
               <AboutMeMDX />
           </animated.div>
+          <br/>
+          <br/>
+          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} class="btn-lrg submit-btn">Download CV</button></a>:""}
         </div>
       </Container>
     </Layout>

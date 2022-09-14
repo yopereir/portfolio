@@ -21,7 +21,7 @@ type AvatarStaticQuery = {
 
 const Header = () => {
   const { name, location, assetsPath } = useEmiliaConfig()
-  const { oneLineDescription } = useSiteMetadata()
+  const { oneLineDescription, categoriesToShow } = useSiteMetadata()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: React.SyntheticEvent) => {
@@ -122,6 +122,8 @@ const Header = () => {
             <LinksList />
             <SocialMediaList />
           </animated.div>
+          <br/>
+          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} class="btn-lrg submit-btn">Download CV</button></a>:""}
         </div>
       </div>
     </Flex>

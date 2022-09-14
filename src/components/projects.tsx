@@ -14,6 +14,8 @@ type Props = {
     slug: string
     title: string
     categories?: string[]
+    importance?: number
+    date: string
     cover: {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData
@@ -75,6 +77,32 @@ const Projects = ({ projects }: Props) => {
     )
   }
 
+  projects = projects.sort((a,b)=>{
+    const regexMatchA = a.date.match(/\w+/g) // a.date.match(/([\d]{2})-([\d]{2})-([\d]{4}|[\d]{2})/g)
+    const regexMatchB = b.date.match(/\w+/g)
+    console.log(a.importance,b.importance);
+    if(((a.importance == null)?0:parseInt(""+a.importance)) > ((b.importance == null)?0:parseInt(""+b.importance))) return -1;
+    else if(((a.importance == null)?0:parseInt(""+a.importance)) < ((b.importance == null)?0:parseInt(""+b.importance))) return 1;
+
+    if(regexMatchA == null && regexMatchB == null) return 0;
+    if(regexMatchA == null) return 1;
+    if(regexMatchB == null) return -1;
+    if(regexMatchB[regexMatchB.length-1] == 'Present') return 1;
+    if(regexMatchA[regexMatchA.length-1] == 'Present') return -1;
+    
+    if(new Date(regexMatchA[regexMatchA.length-2]+", "+regexMatchA[regexMatchA.length-1]) > new Date(regexMatchB[regexMatchB.length-2]+", "+regexMatchB[regexMatchB.length-1])) return -1;
+    else return 1;
+
+  });
+  let projectsToDisplay = projects.map((project, index) => {
+    const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
+    const shadow = rgba(val, 0.15)
+
+    const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
+    const shadowArray = px.map((v) => `${shadow} 0px ${v} ${v} 0px`)
+
+    return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
+  })
   return (
     <Layout>
       <Header />
@@ -91,15 +119,7 @@ const Projects = ({ projects }: Props) => {
               alignItems: `flex-start`,
             }}
           >
-            {projects.map((project, index) => {
-              const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
-              const shadow = rgba(val, 0.15)
-
-              const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
-              const shadowArray = px.map((v) => `${shadow} 0px ${v} ${v} 0px`)
-
-              return <Card key={project.slug} eager={index === 0} item={project} overlay={val} shadow={shadowArray} />
-            })}
+            {projectsToDisplay}
           </Container>
           :
           categoriesToShow.map((category)=>{
