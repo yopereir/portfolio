@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "emilia",
-  "description": "Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.",
-  "version": "0.3.11",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "name": "Yohann Pereira",
+  "description": "Minimalistic portfolio site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.",
+  "version": "1.0.0",
+  "author": "Yohann Pereira <yohann.pereira28@gmail.com>",
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-emilia",
   "scripts": {

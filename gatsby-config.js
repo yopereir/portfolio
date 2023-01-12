@@ -7,23 +7,23 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-emilia-core/gatsby-config.js
-    siteTitle: `Yohann`,
+    siteTitle: `Yohann Pereira`,
     siteTitleAlt: `Yohann - Portfolio`,
-    siteHeadline: `Yohann`,
-    siteUrl: `https://emilia.lekoarts.de`,
+    siteHeadline: `Yohann Pereira`,
+    siteUrl: `https://yopereir.github.io`,
     siteDescription: `Minimalistic portfolio site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `Yohann Pereira`,
-    oneLineDescription: `This is a one line description`,
-    categoriesToShow: [`DevOps`], // set to ['All'] to show all categories
+    oneLineDescription: `Dependable problem solver`,
+    categoriesToShow: [`DevOps`,`Blockchain`], // set to ['All'] to show all categories
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       // See the theme's README for all available options
       options: {
-        name: "Yohann",
+        name: "Yohann Pereira",
         location: "", // leave as empty string to not display location
         socialMedia: [
           {
@@ -41,9 +41,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Emilia - @lekoarts/gatsby-theme-emilia`,
-        short_name: `Emilia`,
-        description: `Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI.`,
+        name: `Yohann Pereira`,
+        short_name: `Yohann Pereira`,
+        description: `Minimalistic portfolio site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
         start_url: `/`,
         background_color: `#fff`,
         // This will impact how browsers show your PWA/website

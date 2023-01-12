@@ -123,7 +123,7 @@ const Header = () => {
             <SocialMediaList />
           </animated.div>
           <br/>
-          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} class="btn-lrg submit-btn">Download CV</button></a>:""}
+          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} className="btn-lrg submit-btn">Download CV</button></a>:""}
         </div>
       </div>
     </Flex>

@@ -25,7 +25,7 @@ const LinksList = () => {
   return (
     <React.Fragment>
       {
-        (query.site.siteMetadata.categoriesToShow.length >= 1 && !query.site.siteMetadata.categoriesToShow.includes("All"))?
+        (query.site.siteMetadata.categoriesToShow.length > 1 && !query.site.siteMetadata.categoriesToShow.includes("All"))?
         query.site.siteMetadata.categoriesToShow.map((category) => (
           <Themed.a key={category} href={"#"+category}>
             {category}

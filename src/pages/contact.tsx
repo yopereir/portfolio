@@ -128,7 +128,7 @@ const ContactPage = ({ title, areas, description = ``, date }: ContactPageProps)
 <form class="gform" method="POST" data-email="yohann.pereira28@gmail.com" onSubmit={handleSubmit}>
   <div class="container" style={{styles}}>
     <div class="row">
-        <h4 style={{"text-align":"center"}}>We'd love to hear from you!</h4>
+        <h4 style={{"text-align":"center"}}>Let's get connected!</h4>
     </div>
     <div class="row input-container">
         <div class="col-xs-12">
@@ -160,7 +160,7 @@ const ContactPage = ({ title, areas, description = ``, date }: ContactPageProps)
           </div>
         </div>
         <div class="col-xs-12">
-          <input type="submit" value="Send Email" style={{"maxWidth":"25vw"}} class="btn-lrg submit-btn"/>
+          <input type="submit" value="Send Email" style={{"maxWidth":"25vw"}} className="btn-lrg submit-btn"/>
         </div>
     </div>
   </div>

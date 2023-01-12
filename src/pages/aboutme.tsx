@@ -95,7 +95,7 @@ const AboutMePage = ({ title, areas, description = ``, date }: AboutMePageProps)
           </animated.div>
           <br/>
           <br/>
-          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} class="btn-lrg submit-btn">Download CV</button></a>:""}
+          {categoriesToShow.length == 1?<a href={"resumes/Resume_"+categoriesToShow[0].replace(" ","-")+".docx"} target="_blank"><button value="Send Email" style={{"maxWidth":"25vw"}} className="btn-lrg submit-btn">Download CV</button></a>:""}
         </div>
       </Container>
     </Layout>
