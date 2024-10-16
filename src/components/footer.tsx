@@ -34,10 +34,10 @@ const Footer = () => {
           >
             <div sx={{ t: [1, 1] }}>
               <div sx={{ display: "flex", textAliign: "center", justifyContent: `space-around`, a: { ml: [1, 1], mr: [1, 1] } }}>
-                <Themed.a key="about-me" href="aboutme">
+                <Themed.a key="about-me" href="/aboutme">
                   About Me
                 </Themed.a>
-                <Themed.a key="contact" href="contact">
+                <Themed.a key="contact" href="/contact">
                   Contact
                 </Themed.a>
                 <SocialMediaList />
