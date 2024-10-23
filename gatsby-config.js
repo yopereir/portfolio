@@ -11,12 +11,12 @@ module.exports = {
     siteTitleAlt: `Yohann - Portfolio`,
     siteHeadline: `Yohann Pereira`,
     siteUrl: `https://yopereir.github.io`,
-    siteDescription: `Minimalistic portfolio site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
+    siteDescription: `Portfolio website of Yohann Pereira.`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `Yohann Pereira`,
-    oneLineDescription: `Dependable problem solver`,
-    categoriesToShow: [`DevOps`,`Blockchain`], // set to ['All'] to show all categories
+    oneLineDescription: `Lifelong learner`,
+    categoriesToShow: [`DevOps`,`Blockchain`, `Data`], // set to ['All'] to show all categories
   },
   plugins: [
     {
