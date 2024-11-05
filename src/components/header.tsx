@@ -118,6 +118,7 @@ const Header = () => {
         </animated.div>
         <div data-testid="social-header" sx={{ mt: 4, mb: 6, a: { mx: 2 } }}>
           <div style={{textAlign:"center", maxWidth:"80vw"}}>{oneLineDescription}</div>
+          <br/>
           <animated.div style={fadeLongProps}>
             <LinksList />
             <SocialMediaList />
